@@ -1,7 +1,7 @@
-# EvolvSDK
-[![Version](https://img.shields.io/cocoapods/v/EvolvSDK.svg?style=flat)](https://cocoapods.org/pods/EvolvSDK)
-[![License](https://img.shields.io/cocoapods/l/EvolvSDK.svg?style=flat)](https://cocoapods.org/pods/EvolvSDK)
-[![Platform](https://img.shields.io/cocoapods/p/EvolvSDK.svg?style=flat)](https://cocoapods.org/pods/EvolvSDK)
+# EvolvKit
+[![Version](https://img.shields.io/cocoapods/v/EvolvSDK.svg?style=flat)](https://cocoapods.org/pods/EvolvKit)
+[![License](https://img.shields.io/cocoapods/l/EvolvSDK.svg?style=flat)](https://cocoapods.org/pods/EvolvKit)
+[![Platform](https://img.shields.io/cocoapods/p/EvolvSDK.svg?style=flat)](https://cocoapods.org/pods/EvolvKit)
 
 ## Example
 
@@ -11,18 +11,18 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-EvolvSDK is available through [CocoaPods](https://cocoapods.org). To install
+EvolvKit is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'EvolvSDK'
+pod 'EvolvKit'
 ```
 
 ## License
 
-EvolvSDK is available under the Apache License, Version 2.0. See the LICENSE file for more info.
+EvolvKit is available under the Apache License, Version 2.0. See the LICENSE file for more info.
 
-## How to use the Evolv SDK
+## How to use the EvolvKit SDK
 
 #### Vocabulary
 
@@ -30,13 +30,13 @@ EvolvSDK is available under the Apache License, Version 2.0. See the LICENSE fil
 **Allocation:** The set of configurations that have been given to the participant, the values that are being
 experimented against.
 
-For a complete example of how to use this SDK see our [example app](https://github.com/PhyllisWong/EvolvSDK/tree/master/Example).
+For a complete example of how to use this SDK see our [example app](https://github.com/PhyllisWong/EvolvKit/tree/master/Example).
 
 ### Import the SDK
 
 1. Import the Evolv SDK.
 ```swift
-import EvolvSDK
+import EvolvKit
 ```
 
 
