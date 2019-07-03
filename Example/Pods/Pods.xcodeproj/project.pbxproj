@@ -32,6 +32,7 @@
 		331CA0CEFBE4588ABA0245DB8931EB2F /* NSNotificationCenter+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = E42D6F48140C11A58ED2277887DAA421 /* NSNotificationCenter+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3531C1192598109A85EFCA93FEA115C7 /* Pods-EvolvKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9D6354DDCF715B67FA13AE1A893E7 /* Pods-EvolvKit_Tests-dummy.m */; };
 		3571F958A3907B3A806E62D50C2550D4 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EF8AD49A1B8910C7D96543757AC856 /* NetworkReachabilityManager.swift */; };
+		362EC0AB22CD781F0088E4BA /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362EC0AA22CD781F0088E4BA /* test.swift */; };
 		3B5C4B70431F65A2EF16D0B420ECDF4B /* NSURLSession+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBAA95EE39F56C0C463C7B90BD3E47 /* NSURLSession+Promise.swift */; };
 		44F6053BBE67E3E9C9E642E1202B67AC /* hang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A736A8D91A652339E8F4625366DE9D4 /* hang.swift */; };
 		4697BA4A804BC5E868F9CC7134C64F30 /* AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CDF2344CDA58D064DFB1329D25ED1B /* AnyPromise.swift */; };
@@ -191,6 +192,7 @@
 		2D936C882FE76B894CF468A4937C1E55 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		301D32AC3FA78ABC0E43B5D395E28609 /* CustomStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomStringConvertible.swift; path = Sources/CustomStringConvertible.swift; sourceTree = "<group>"; };
 		31CC4391B7257704D0F402BC4902D2CB /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		362EC0AA22CD781F0088E4BA /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		3798FAC3E9A9B3982DDDC1CE78C025C6 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
 		3A03A34613BC8BF04778A87846DDA1E8 /* Pods_EvolvKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvolvKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D59B9BFC707CC1EE63D8381A089E721 /* when.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = when.m; path = Sources/when.m; sourceTree = "<group>"; };
@@ -618,6 +620,7 @@
 				1CCAF6E41CD67967E2F3A2C88D0D8400 /* EvolvParticipant.swift */,
 				6E1E785732AEEA606404B2B7243FB0A0 /* Pod */,
 				41480F279AED7C09E00EEDB74335CFBA /* Support Files */,
+				362EC0AA22CD781F0088E4BA /* test.swift */,
 			);
 			name = EvolvKit;
 			path = ../..;
@@ -899,6 +902,7 @@
 				1986B50C74F1697EA43F68335C93CEB3 /* MultipartFormData.swift in Sources */,
 				3571F958A3907B3A806E62D50C2550D4 /* NetworkReachabilityManager.swift in Sources */,
 				132E0F619E4338E5D1B27E4C72076B3F /* Notifications.swift in Sources */,
+				362EC0AB22CD781F0088E4BA /* test.swift in Sources */,
 				0C5E11DE24DAA737704B355F5F2F3426 /* ParameterEncoding.swift in Sources */,
 				98A929C8E9012AB167672714FFD2113C /* Request.swift in Sources */,
 				D65C254F5ABF2CB5ECEE50FE8F8E1A80 /* Response.swift in Sources */,
