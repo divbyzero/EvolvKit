@@ -44,7 +44,7 @@ import EvolvKit
 
 1. Build an AscendConfig instance.
 ```swift
-let config: AscendConfig = AscendConfig.builder(<environment_id>, <http_client>).build()
+let config: AscendConfig = AscendConfig.builder(eid: <environment_id>, httpClient: <http_client>).build()
 ```
 
 2. Initialize the AscendClient.

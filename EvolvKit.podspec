@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   'This SDK is designed to be integrated into projects to allow for autonomous UI optimozations'
   DESC
   s.homepage         = 'https://github.com/PhyllisWong/EvolvKit'
-  s.license          = { :type => 'Apache License, Version 2.0', :file => './LICENSE' }
+  s.license          = { :type => 'Apache License, Version 2.0', :file => 'LICENSE' }
   s.author           = { 'PhyllisWong' => 'phyllis.wong@evolv.ai' }
   s.source           = { :git => 'https://github.com/PhyllisWong/EvolvKit.git', :tag => s.version.to_s }
   s.swift_version    = '5.0'
