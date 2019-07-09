@@ -69,7 +69,7 @@ public class Allocator {
     return Promise { resolve in
       let url = self.createAllocationsUrl()
       
-      let strPromise = self.httpClient.get(url: url).done { (stringJSON) in
+      _ = self.httpClient.get(url: url).done { (stringJSON) in
         var allocations = JSON.init(parseJSON: stringJSON).arrayValue
         
         print("FETCHED FROM API: \(allocations)")
