@@ -11,7 +11,7 @@ import SwiftyJSON
 import PromiseKit
 
 
-class EvolvClientImpl : EvolvClientProtocol {
+public class EvolvClientImpl : EvolvClientProtocol {
   private let LOGGER = Log.logger
   
   private let eventEmitter: EventEmitter
@@ -23,7 +23,7 @@ class EvolvClientImpl : EvolvClientProtocol {
   private let participant: EvolvParticipant
   private let dispatchGroup = DispatchGroup()
   
-  init(_ config: EvolvConfig,
+  public init(_ config: EvolvConfig,
        _ eventEmitter: EventEmitter,
        _ futureAllocations: Promise<[JSON]>,
        _ allocator: Allocator,

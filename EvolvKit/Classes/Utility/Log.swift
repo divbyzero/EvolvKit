@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol Logger {
+public protocol Logger {
   func log(_ level: Log.Level, message: String)
 }
 
-struct Log {
+public struct Log {
   
-  enum Level: Int {
+  public enum Level: Int {
     case debug
     case error
     case noLogging

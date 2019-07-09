@@ -19,11 +19,7 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": [
-    "EvolvKit/*.swift/*",
-    "EvolvKit/Classes/*.swift",
-    "EvolvKit/Classes/Utility/*.swift"
-  ],
+  "source_files": "EvolvKit/Classes/**/*",
   "frameworks": "UIKit",
   "dependencies": {
     "Alamofire": [

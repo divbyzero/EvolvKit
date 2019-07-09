@@ -34,7 +34,7 @@ class ViewController: UIViewController {
   // This is also necessary when extending the superclass.
   required init?(coder aDecoder: NSCoder) {
     let envId = "40ebcd9abf"
-    let httpClient = 
+    let httpClient = EvolvHttpClient()
     let config = EvolvConfig.builder(environmentId: envId, httpClient: httpClient).build()
     let participant = EvolvParticipant.builder().build()
     print("\(participant)")

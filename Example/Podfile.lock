@@ -30,7 +30,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  EvolvKit: b68179cb4bfedc8bdcc2049f6afc10b7f58e7ec2
+  EvolvKit: 04eb8c3f6cbf81057ee192f302c18392b9693b71
   PromiseKit: 1fdaeb6c0a94a5114fcb814ff3d772b86886ad4e
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 

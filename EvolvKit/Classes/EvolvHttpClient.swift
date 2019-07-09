@@ -12,16 +12,18 @@ import PromiseKit
 import SwiftyJSON
 
 
-class EvolvHttpClient : HttpProtocol {
+public class EvolvHttpClient : HttpProtocol {
   
-  func get(url: URL) -> Promise<String> {
+  public init () {}
+  
+  public func get(url: URL) -> Promise<String> {
     return Promise<String> { resolver -> Void in
       
       Alamofire.request(url)
         .validate()
         .responseString { response in
           switch response.result {
-          case .success(let string):
+          case .success( _):
             
             if let string = response.result.value {
               print("UR FETCHED JSON: \(string)")
@@ -35,7 +37,7 @@ class EvolvHttpClient : HttpProtocol {
   }
   
   // This is just for the emitter
-  func post(url: URL) -> Promise<JSON> {
+  public func post(url: URL) -> Promise<JSON> {
     return Promise<JSON> { resolver -> Void in
       
       Alamofire.request(url, method: .post, encoding: JSONEncoding.default)

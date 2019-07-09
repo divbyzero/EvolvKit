@@ -8,7 +8,7 @@
 
 import Foundation
 public class EvolvClientFactory {
-  private let LOGGER = Log.logger
+  public let LOGGER = Log.logger
   
   /**
    * Creates instances of the EvolvClient.
@@ -19,7 +19,7 @@ public class EvolvClientFactory {
   
   public var client: EvolvClientProtocol
   
-  init(config: EvolvConfig) {
+  public init(config: EvolvConfig) {
     LOGGER.log(.debug, message: "Initializing Evolv Client.")
     let participant: EvolvParticipant = EvolvParticipant.builder().build()
     self.client = EvolvClientFactory.createClient(config: config, participant: participant)
@@ -32,7 +32,7 @@ public class EvolvClientFactory {
    * @param participant the participant for the initialized client
    * @return an instance of EvolvClient
    */
-  init(config: EvolvConfig, participant: EvolvParticipant) {
+  public init(config: EvolvConfig, participant: EvolvParticipant) {
     LOGGER.log(.debug, message: "Initializing Evolv Client.")
     self.client = EvolvClientFactory.createClient(config: config, participant: participant)
   }

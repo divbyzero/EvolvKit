@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/PhyllisWong/EvolvKit.git', :tag => s.version.to_s }
   s.swift_version    = '5.0'
   s.ios.deployment_target = '9.0'
-  s.source_files     = 'EvolvKit/*.swift/*', 'EvolvKit/Classes/*.swift', 'EvolvKit/Classes/Utility/*.swift'
+  s.source_files     = 'EvolvKit/Classes/**/*'
   s.frameworks       = 'Foundation'
   s.frameworks       = 'UIKit'
   s.dependency 'Alamofire'
