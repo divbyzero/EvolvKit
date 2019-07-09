@@ -33,6 +33,7 @@
 		108AF82AD55604761E5CE440 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		2D379E6D64B28D9D091E8AA8 /* Pods_EvolvKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvolvKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		362EC05222CD68630088E4BA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		36B77E1822D52D8900F419DD /* Pods_EvolvKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_EvolvKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		413BC629A0E194040DAF3DD5 /* Pods-EvolvKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvolvKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-EvolvKit_Tests/Pods-EvolvKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		58F36903B855067B2028D671 /* Pods_EvolvKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvolvKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* EvolvKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvolvKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +84,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				36B77E1822D52D8900F419DD /* Pods_EvolvKit_Example.framework */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -274,12 +276,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-EvolvKit_Example/Pods-EvolvKit_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/EvolvKit/EvolvKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EvolvKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);

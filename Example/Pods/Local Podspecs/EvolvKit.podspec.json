@@ -5,7 +5,7 @@
   "description": "'This SDK is designed to be integrated into projects to allow for autonomous UI optimozations'",
   "homepage": "https://github.com/PhyllisWong/EvolvKit",
   "license": {
-    "type": "Apache",
+    "type": "APACHE",
     "file": "LICENSE"
   },
   "authors": {
@@ -19,7 +19,11 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "EvolvKit/Classes/**/*",
+  "source_files": [
+    "EvolvKit/*.swift/*",
+    "EvolvKit/Classes/*.swift",
+    "EvolvKit/Classes/Utility/*.swift"
+  ],
   "frameworks": "UIKit",
   "dependencies": {
     "Alamofire": [

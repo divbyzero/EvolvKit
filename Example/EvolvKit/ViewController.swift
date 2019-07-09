@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import EvolvKit
 import SwiftyJSON
-import Alamofire
-import PromiseKit
+import EvolvKit
 
 
 class ViewController: UIViewController {
@@ -36,7 +34,7 @@ class ViewController: UIViewController {
   // This is also necessary when extending the superclass.
   required init?(coder aDecoder: NSCoder) {
     let envId = "40ebcd9abf"
-    let httpClient = Evo
+    let httpClient = 
     let config = EvolvConfig.builder(environmentId: envId, httpClient: httpClient).build()
     let participant = EvolvParticipant.builder().build()
     print("\(participant)")
