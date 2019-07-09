@@ -10,9 +10,9 @@ import Foundation
 import SwiftyJSON
 
 public class DefaultAllocationStore : AllocationStoreProtocol {
-  private var cache: LRUCache
+  public var cache: LRUCache
   
-  init(size: Int) {
+  public init(size: Int) {
     self.cache = LRUCache(size)
   }
   public func get(uid: String) -> [JSON]? {

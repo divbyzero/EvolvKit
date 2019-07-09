@@ -17,15 +17,15 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var textLabel: UILabel!
   
-//  let store = DefaultAllocationStore(size: 1000)
-//  var allocations = [JSON]()
-//  var client : EvolvClientProtocol?
+  let store = DefaultAllocationStore(size: 1000)
+  var allocations = [JSON]()
+  var client : EvolvClientProtocol?
   
   @IBAction func didPressCheckOut(_ sender: Any) {
-//    let key = getJsonData()
-//    if key.count > 0 {
-//      self.textLabel.text = "Conversion!"
-//    }
+    let key = getJsonData()
+    if key.count > 0 {
+      self.textLabel.text = "Conversion!"
+    }
     print("checked out")
   }
   
@@ -36,11 +36,11 @@ class ViewController: UIViewController {
   // This is also necessary when extending the superclass.
   required init?(coder aDecoder: NSCoder) {
     let envId = "40ebcd9abf"
-//    let httpClient = EvolvHttpClient()
-//    let config = EvolvConfig.builder(environmentId: envId, httpClient: httpClient).build()
+    let httpClient = Evo
+    let config = EvolvConfig.builder(environmentId: envId, httpClient: httpClient).build()
     let participant = EvolvParticipant.builder().build()
     print("\(participant)")
-//    self.client = EvolvClientFactory(config: config, participant: participant).client as! EvolvClientImpl
+    self.client = EvolvClientFactory(config: config, participant: participant).client as! EvolvClientImpl
     super.init(coder: aDecoder)
   }
   
@@ -58,16 +58,16 @@ class ViewController: UIViewController {
 private extension ViewController {
   
   private func getJsonData() -> String {
-//    guard let client = self.client else { return "" }
+    guard let client = self.client else { return "" }
     let key = "button"
     // get this to execute on the main thread and change the UI
     func printStuff(value: Any) { print("DO STUFF with \(value)") }
     // Client makes the call to get the allocations
-//    let someValue = client.subscribe(key: key, defaultValue: "green", function: printStuff)
-//    print(someValue)
-//    client.emitEvent(key: key)
-//    return key
-    return "STRING"
+    let someValue = client.subscribe(key: key, defaultValue: "green", function: printStuff)
+    print(someValue)
+    client.emitEvent(key: key)
+    return key
+//    return "STRING"
   }
 }
 
