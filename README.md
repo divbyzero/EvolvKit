@@ -1,13 +1,17 @@
 # EvolvKit
-[![Version](https://img.shields.io/cocoapods/v/EvolvSDK.svg?style=flat)](https://cocoapods.org/pods/EvolvKit)
-[![License](https://img.shields.io/cocoapods/l/EvolvSDK.svg?style=flat)](https://cocoapods.org/pods/EvolvKit)
-[![Platform](https://img.shields.io/cocoapods/p/EvolvSDK.svg?style=flat)](https://cocoapods.org/pods/EvolvKit)
+[![Version](https://img.shields.io/cocoapods/v/EvolvKit.svg?style=flat)](https://cocoapods.org/pods/EvolvKit)
+[![License](https://img.shields.io/cocoapods/l/EvolvKit.svg?style=flat)](https://cocoapods.org/pods/EvolvKit)
+[![Platform](https://img.shields.io/cocoapods/p/EvolvKit.svg?style=flat)](https://cocoapods.org/pods/EvolvKit)
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+cocoapods
+```ruby
+sudo gem install cocoapods
+```
 
 ## Installation
 
@@ -42,14 +46,15 @@ import EvolvKit
 
 ### Client Initialization
 
-1. Build an AscendConfig instance.
+1. Build an EvolvConfig instance.
 ```swift
-let config: AscendConfig = AscendConfig.builder(eid: <environment_id>, httpClient: <http_client>).build()
+let config: EvolvConfig = EvolvConfig.builder(eid: <environment_id>,
+                                              httpClient: <http_client>).build()
 ```
 
-2. Initialize the AscendClient.
+2. Initialize the EvolvClient.
 ```swift
-let client: AscendClient = AscendClientFactory.init(config)
+let client: EvolvClient = EvolvClientFactory.init(config)
 ```
 
 ### Confirm the Allocation
@@ -58,12 +63,12 @@ let client: AscendClient = AscendClientFactory.init(config)
 ```swift
 client.confirm()
 ```
-*Note: After the client has initialized, it is important to confirm the participant into the experiment. This action
-records the participant's allocation and sends the info back to Ascend.*
+*Note: After the client has been initialized, it is important to confirm the participant into the experiment. This action
+records the participant's allocation and sends the information back to Evolv.*
 
 ### Value Retrieval
 
-1. Retrieve values from Ascend.
+1. Retrieve values from Evolv.
 ```swift
 let value: T = client.get(key:<key_for_value>, defaultValue:<default_value>)
 ```
@@ -77,7 +82,7 @@ allocation has been received.*
 You may want to use a value from your allocation without blocking the execution of your application. If this is true, you can
 subscribe to a value and apply any actions as a result of it asynchronously.
 
-1. Subscribe to a value from Ascend.
+1. Subscribe to a value from Evolv.
 ```swift
 client.subscribe(<key_for_value>, <default_value>, value -> {
 Your code...
@@ -119,26 +124,26 @@ client.contaminate()
 
 ### Custom Allocation Store (optional)
 
-Once a participant has been allocated into an experiment you may want to retain the allocations they received. To do this, create a custom allocation store by implementing the AscendAllocationStore interface. You can supply the
-custom allocation store to the client when you build the AscendConfig.
+Once a participant has been allocated into an experiment you may want to retain the allocations they received. To do this, create a custom allocation store by
+implementing the EvolvAllocationStore interface. You can supply the custom allocation store to the client when you build the EvolvConfig.
 
 1. Supply the allocation store to the client.
 ```swift
-let config: AscendConfig = AscendConfig.Builder(<environment_id>)
-.setAscendAllocationStore(<custom_store>)
+let config: EvolvConfig = EvolvConfig.Builder(eid: <environment_id>)
+.setEvolvAllocationStore(<custom_store>)
 .build()
 
-let client: AscendClient = AscendClient.init(config)
+let client: EvolvClient = EvolvClient.init(config)
 ```
 
 
 ### Optional Configurations
 
-There are several optional configurations available through the AscendConfig builder, check out the AscendConfig
+There are several optional configurations available through the EvolvConfig builder, check out the EvolvConfig
 documentation to see what options are available.
 
 
-### About Evolv and the Ascend Product
+### About Evolv and the Evolv Product
 
 Evolv Delivers Autonomous Optimization Across Web & Mobile.
 

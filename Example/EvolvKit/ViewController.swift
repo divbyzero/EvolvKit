@@ -35,10 +35,11 @@ class ViewController: UIViewController {
   required init?(coder aDecoder: NSCoder) {
     let envId = "40ebcd9abf"
     let httpClient = EvolvHttpClient()
-    let config = EvolvConfig.builder(environmentId: envId, httpClient: httpClient).build()
+    let config = EvolvConfig.builder(environmentId: envId, httpClient: httpClient).setEvolvAllocationStore(allocationStore: store).build()
     let participant = EvolvParticipant.builder().build()
     print("\(participant)")
-    self.client = EvolvClientFactory(config: config, participant: participant).client as! EvolvClientImpl
+    client = EvolvClientFactory(config: config, participant: participant).client as! EvolvClientImpl
+    client?.confirm()
     super.init(coder: aDecoder)
   }
   
@@ -64,8 +65,8 @@ private extension ViewController {
     let someValue = client.subscribe(key: key, defaultValue: "green", function: printStuff)
     print(someValue)
     client.emitEvent(key: key)
+    client.contaminate()
     return key
-//    return "STRING"
   }
 }
 
