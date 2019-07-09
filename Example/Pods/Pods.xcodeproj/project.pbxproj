@@ -240,7 +240,7 @@
 		988FC6CDAF0EDB08CAD7420952B71370 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994519A4B30B7858F37EB748CB74E7EB /* Process+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Process+Promise.swift"; path = "Extensions/Foundation/Sources/Process+Promise.swift"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A0AE7106AB9AD57C77FA78487AD79C0C /* EvolvParticipant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EvolvParticipant.swift; sourceTree = "<group>"; };
+		A0AE7106AB9AD57C77FA78487AD79C0C /* EvolvParticipant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EvolvParticipant.swift; path = ../EvolvParticipant.swift; sourceTree = "<group>"; };
 		A2BB04EEEA9B1B0524057714CC52D953 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Sources/Error.swift; sourceTree = "<group>"; };
 		A5DDAE7BB4C2FA2D339398CCC1ED8FB3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
 		A7144A2930DC7AB1CC40892EEE0A2FB2 /* Pods-EvolvKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EvolvKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -412,6 +412,7 @@
 		363ED7DF22D4FDD3002E67F6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A0AE7106AB9AD57C77FA78487AD79C0C /* EvolvParticipant.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -622,7 +623,6 @@
 		FB6C4E38624C7B6E2560814556CFEC88 /* EvolvKit */ = {
 			isa = PBXGroup;
 			children = (
-				A0AE7106AB9AD57C77FA78487AD79C0C /* EvolvParticipant.swift */,
 				363ED7DF22D4FDD3002E67F6 /* Classes */,
 				B21FE5C33F9810C82B3661CF3E173DDA /* Pod */,
 				2E328D9688E9A8C0CF6811C00CF8CD3E /* Support Files */,
