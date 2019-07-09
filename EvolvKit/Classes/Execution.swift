@@ -49,7 +49,7 @@ class Execution<T> {
     let activeExperiements = allocations.getActiveExperiments()
     if alreadyExecuted.isEmpty || alreadyExecuted == activeExperiements {
       // there was a change to the allocations after reconciliation, apply changes
-      function(value)
+      function(value as Any)
     }
     alreadyExecuted = activeExperiements
   }

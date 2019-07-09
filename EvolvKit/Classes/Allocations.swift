@@ -41,7 +41,7 @@ public class Allocations {
   
   private func getElementFromGenome(genome: JSON, keyParts: [String]) throws -> JSON {
     var element: JSON = genome
-    if element == nil {
+    if element.count <= 0 {
       throw EvolvKeyError(rawValue: "Allocation genome was empty")!
     }
     
@@ -67,7 +67,7 @@ public class Allocations {
       var previousFound = false
       
       for pa in previousAllocations {
-        var previousEid = String(describing: pa["eid"])
+        let previousEid = String(describing: pa["eid"])
         
         if currentEid.elementsEqual(previousEid) {
           allocations.append(pa)

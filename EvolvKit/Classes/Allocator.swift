@@ -83,7 +83,7 @@ public class Allocator {
         
         self.store.set(uid: self.participant.getUserId(), allocations: allocations)
         let cachedAgain = self.store.get(uid: self.participant.getUserId())
-        print("FETCHED JSON CACHED NOW: \(cachedAgain)")
+        print("FETCHED JSON CACHED NOW: \(String(describing: cachedAgain))")
         self.allocationStatus = AllocationStatus.RETRIEVED
         
         if (self.confirmationSandbagged) {

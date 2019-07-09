@@ -177,7 +177,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		002B1E88BA14EBF633CD66EBFBA107E9 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		002B1E88BA14EBF633CD66EBFBA107E9 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CA331E7C3ED2B0D2768375FF345E01 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
 		02F469715FB568BEF83250A41B4BF836 /* NSNotificationCenter+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSNotificationCenter+Promise.swift"; path = "Extensions/Foundation/Sources/NSNotificationCenter+Promise.swift"; sourceTree = "<group>"; };
 		04356377D3139996B9EC24D7C389311D /* Allocations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Allocations.swift; path = EvolvKit/Classes/Allocations.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		115D75B37055BD93B1FFE48ABAA581F6 /* NSTask+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSTask+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSTask+AnyPromise.m"; sourceTree = "<group>"; };
 		119228A4F73DD31ECCC8022A0BFDC662 /* PromiseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PromiseKit.modulemap; sourceTree = "<group>"; };
 		132966A15AB56FD28521710B3C6DF36C /* AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AnyPromise.m; path = Sources/AnyPromise.m; sourceTree = "<group>"; };
-		1377A1BF25AC0904BC2C2145C7497570 /* EvolvKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = EvolvKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1377A1BF25AC0904BC2C2145C7497570 /* EvolvKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = EvolvKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		139384C53E8BD2C3E2F5577D8DE70233 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		14C0C25174444EEA262C312CE4B20F07 /* after.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = after.m; path = Sources/after.m; sourceTree = "<group>"; };
 		1860FBEF644155BF82C090AE04E62C76 /* Pods-EvolvKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EvolvKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -213,9 +213,9 @@
 		3050D5F5BCC22508188F20535DE4F4B5 /* HttpProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpProtocol.swift; path = EvolvKit/Classes/HttpProtocol.swift; sourceTree = "<group>"; };
 		31CC4391B7257704D0F402BC4902D2CB /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		35B484B0A35CA0E578208EAD2770B76D /* EvolvHttpClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EvolvHttpClient.swift; path = EvolvKit/Classes/EvolvHttpClient.swift; sourceTree = "<group>"; };
-		36CE4816F1FB6615CCFCE5169BC681F8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		36CE4816F1FB6615CCFCE5169BC681F8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3798FAC3E9A9B3982DDDC1CE78C025C6 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
-		3A03A34613BC8BF04778A87846DDA1E8 /* Pods_EvolvKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EvolvKit_Tests.framework; path = "Pods-EvolvKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A03A34613BC8BF04778A87846DDA1E8 /* Pods_EvolvKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvolvKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C071F2A58ADCEC50CE14DEC2E50DCFC /* ExecutionQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExecutionQueue.swift; path = EvolvKit/Classes/ExecutionQueue.swift; sourceTree = "<group>"; };
 		3D59B9BFC707CC1EE63D8381A089E721 /* when.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = when.m; path = Sources/when.m; sourceTree = "<group>"; };
 		3DD9D6354DDCF715B67FA13AE1A893E7 /* Pods-EvolvKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EvolvKit_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 		59B092620843A87E8C85F343B7F1F23E /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		5A1EAE50139C8CE79D38B66B7FAE0431 /* after.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = after.swift; path = Sources/after.swift; sourceTree = "<group>"; };
 		5D3B53C27D6E7293851ADB6553B64943 /* AllocationStoreProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllocationStoreProtocol.swift; path = EvolvKit/Classes/AllocationStoreProtocol.swift; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E765F01D733133BE331FBBDB0ECAD05 /* NSURLSession+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSURLSession+AnyPromise.h"; sourceTree = "<group>"; };
 		5EF880152900FAA5E878EEEE619A5629 /* Pods-EvolvKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EvolvKit_Tests-umbrella.h"; sourceTree = "<group>"; };
 		60033AADFFF3DF84455198664D7A14D5 /* DefaultAllocationStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultAllocationStore.swift; path = EvolvKit/Classes/DefaultAllocationStore.swift; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 		68CF1C5A500C91D1EC6EFE4641092428 /* EvolvClientImpl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EvolvClientImpl.swift; path = EvolvKit/Classes/EvolvClientImpl.swift; sourceTree = "<group>"; };
 		68F2F04EA45154C1F032341C28B3ADC8 /* Pods-EvolvKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EvolvKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		6FF218399D49B95A1AD37608DDEA2500 /* Execution.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Execution.swift; path = EvolvKit/Classes/Execution.swift; sourceTree = "<group>"; };
-		720E2C89B4D7F35F986130452B815564 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		720E2C89B4D7F35F986130452B815564 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7382983F1BBDA5A0166F71D7431E297A /* Pods-EvolvKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EvolvKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		740107A08FBC71B23E32634270CF9BBB /* PromiseKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PromiseKit-Info.plist"; sourceTree = "<group>"; };
 		740AABBB0D3B30EB766BBA513708FED4 /* EvolvParticipant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EvolvParticipant.swift; path = EvolvKit/Classes/EvolvParticipant.swift; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 		988E85F45C1B6922D22E42748D706288 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		988FC6CDAF0EDB08CAD7420952B71370 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994519A4B30B7858F37EB748CB74E7EB /* Process+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Process+Promise.swift"; path = "Extensions/Foundation/Sources/Process+Promise.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A2BB04EEEA9B1B0524057714CC52D953 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Sources/Error.swift; sourceTree = "<group>"; };
 		A5DDAE7BB4C2FA2D339398CCC1ED8FB3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
 		A67A82010123E67DE5D8D1B574DC43B6 /* EvolvErrorHandling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EvolvErrorHandling.swift; path = EvolvKit/Classes/EvolvErrorHandling.swift; sourceTree = "<group>"; };
@@ -286,14 +286,14 @@
 		CC18944EF2103964829837FBA26CD6F9 /* LinkedQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkedQueue.swift; sourceTree = "<group>"; };
 		CEF25AD2DF9649639AA466A448083A94 /* SwiftyJSON-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyJSON-Info.plist"; sourceTree = "<group>"; };
 		D497993A23A19F892645ADF5F669C36B /* EvolvAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EvolvAction.swift; path = EvolvKit/Classes/EvolvAction.swift; sourceTree = "<group>"; };
-		D8B673E2F4A38940E96C56978DE43C2C /* Pods_EvolvKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EvolvKit_Example.framework; path = "Pods-EvolvKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B673E2F4A38940E96C56978DE43C2C /* Pods_EvolvKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvolvKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BD8ABA438EE43836BC5FF3BF572695 /* hang.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = hang.m; path = Sources/hang.m; sourceTree = "<group>"; };
 		D9138520486C23B0396C2BAE50508574 /* EvolvKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EvolvKit.xcconfig; sourceTree = "<group>"; };
 		D9C7342ACDF334C907026B170E0A2E2C /* EvolvKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EvolvKit.modulemap; sourceTree = "<group>"; };
 		D9EEE7E2466E142B847292C0C49BA2AD /* PromiseKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-prefix.pch"; sourceTree = "<group>"; };
 		DC5A65B5711CFFD8FCDA8E8CBF41E3C1 /* UIView+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+AnyPromise.h"; path = "Extensions/UIKit/Sources/UIView+AnyPromise.h"; sourceTree = "<group>"; };
 		DE7CD7F2D904A344585DF81386BD6E7F /* EvolvKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EvolvKit-Info.plist"; sourceTree = "<group>"; };
-		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E31E0F136ED5275E240208C5F5294C34 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		E32AF9517744E95AB1B206B77AF63E80 /* fwd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fwd.h; path = Sources/fwd.h; sourceTree = "<group>"; };
 		E42D6F48140C11A58ED2277887DAA421 /* NSNotificationCenter+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.h"; sourceTree = "<group>"; };
@@ -307,7 +307,7 @@
 		EFDB76393C5508FFF428B71E735FCD35 /* LinkedList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		F34D586E29B7D89F6EF566C4C19B961B /* Pods-EvolvKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EvolvKit_Example-dummy.m"; sourceTree = "<group>"; };
 		F3951C1F7B8C5B4B368514C7A2D0A34C /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		F3BCFFB468C3BF25A72D5C449DD46C25 /* EvolvKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EvolvKit.framework; path = EvolvKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3BCFFB468C3BF25A72D5C449DD46C25 /* EvolvKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EvolvKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41018437C967E0D145EAAE2A0093596 /* NSURLSession+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSURLSession+AnyPromise.m"; sourceTree = "<group>"; };
 		F5643D87382A7FA0B8A936F77821B6A5 /* EvolvClientFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EvolvClientFactory.swift; path = EvolvKit/Classes/EvolvClientFactory.swift; sourceTree = "<group>"; };
 		F5D07E1A63FD31C49401C899882F0F49 /* AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyPromise.h; path = Sources/AnyPromise.h; sourceTree = "<group>"; };
@@ -413,7 +413,6 @@
 				911C7D0B8F43E2CACE2FF5C1840632E2 /* Support Files */,
 				739EFA4E398ED92B8B71F3BF96E25A3E /* UIKit */,
 			);
-			name = PromiseKit;
 			path = PromiseKit;
 			sourceTree = "<group>";
 		};
@@ -448,7 +447,6 @@
 				195680456D789922E8F042DB5733A267 /* Validation.swift */,
 				51AB8770BC364DB6CE6CAF87F8890D26 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -658,7 +656,6 @@
 				A5DDAE7BB4C2FA2D339398CCC1ED8FB3 /* SwiftyJSON.swift */,
 				382322C1A22FF2CA79837CCA93C262E8 /* Support Files */,
 			);
-			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -891,6 +888,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					EAAA1AD3A8A1B59AB91319EE40752C6D = {
+						LastSwiftMigration = 1020;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1161,7 +1163,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1317,8 +1319,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -1542,7 +1543,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
