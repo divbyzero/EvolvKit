@@ -22,14 +22,23 @@ public class Allocations {
   }
   
   func getValueFromAllocations<T>(_ key: String, _ type: T, _ participant: EvolvParticipant) throws -> JSON? {
-    var keyParts = [String]()
-    keyParts = key.components(separatedBy: "\\.")
+    let keyParts = key.components(separatedBy: ".")
+    
     if (keyParts.isEmpty) { throw EvolvKeyError(rawValue: "Key provided was empty.")! }
-    let alloc = self.allocations
-    for a in alloc {
+    var alloc = self.allocations
+    let jsonString = "[{\"uid\":\"sandbox_user\",\"eid\":\"experiment_1\",\"cid\":\"candidate_3\",\"genome\":{\"ui\":{\"layout\":\"option_2\",\"buttons\":{\"checkout\":{\"text\":\"Begin Secure Checkout\",\"color\":\"#f3b36d\"},\"info\":{\"text\":\"Product Specifications\",\"color\":\"#f3b36d\"}}},\"search\":{\"weighting\":3.5}},\"excluded\":true}]"
+
+    if let dataFromString = jsonString.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+      alloc = try JSON(data: dataFromString).arrayValue
+    }
+   
+    
+    for a in self.allocations {
+      print("A: \(a)")
       let genome = a["genome"]
       let element = try getElementFromGenome(genome: genome, keyParts: keyParts)
-      if !(element.error != nil) {
+      print("element: \(element)")
+      if element.error == nil {
         return element
       } else {
         throw EvolvKeyError.errorMessage
@@ -41,21 +50,27 @@ public class Allocations {
   
   private func getElementFromGenome(genome: JSON, keyParts: [String]) throws -> JSON {
     var element: JSON = genome
+    var success = false
     if element.count <= 0 {
       throw EvolvKeyError(rawValue: "Allocation genome was empty")!
     }
     
-    for part: String in keyParts {
-      do {
-        let object = genome[part]
+    // dynamically construct an object key to get at value here
+    for part in keyParts {
+      print("******** PART: \(part)")
+      
+        let object = element[part]
+        print("********* object: \(object)")
         element = object
+        print("Element: \(element)")
+      
+        // check if element
         if (element.error == nil) {
-          break
+          print("success: \(success)")
         }
-      } catch {
-        throw EvolvKeyError(rawValue: "element fails")!
-      }
+      // throw EvolvKeyError(rawValue: "element fails")!
     }
+    print("element: \(element)")
     return element
   }
   

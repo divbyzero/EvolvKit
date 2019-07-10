@@ -20,10 +20,8 @@ class ViewController: UIViewController {
   var client : EvolvClientProtocol?
   
   @IBAction func didPressCheckOut(_ sender: Any) {
+    self.textLabel.text = "Conversion!"
     let key = getJsonData()
-    if key.count > 0 {
-      self.textLabel.text = "Conversion!"
-    }
     print("checked out")
   }
   
@@ -40,6 +38,7 @@ class ViewController: UIViewController {
     print("\(participant)")
     client = EvolvClientFactory(config: config, participant: participant).client as! EvolvClientImpl
     client?.confirm()
+    
     super.init(coder: aDecoder)
   }
   
@@ -47,6 +46,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     guard let statusBarView = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
     statusBarView.backgroundColor = UIColor(red: 0.0, green: 0.3, blue: 0.3, alpha: 1.0)
+    let key = getJsonData()
   }
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -58,11 +58,11 @@ private extension ViewController {
   
   private func getJsonData() -> String {
     guard let client = self.client else { return "" }
-    let key = "button"
+    let key = "ui.buttons.checkout.color"
     // get this to execute on the main thread and change the UI
     func printStuff(value: Any) { print("DO STUFF with \(value)") }
     // Client makes the call to get the allocations
-    let someValue = client.subscribe(key: key, defaultValue: "green", function: printStuff)
+    let someValue = client.subscribe(key: key, defaultValue: "#ffffff", function: printStuff)
     print(someValue)
     client.emitEvent(key: key)
     client.contaminate()

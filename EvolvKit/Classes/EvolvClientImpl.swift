@@ -74,6 +74,7 @@ public class EvolvClientImpl : EvolvClientProtocol {
       }
     } catch {
       LOGGER.log(.debug, message: "Error retrieving Allocations")
+      return defaultValue
     }
     return value
   }
@@ -81,7 +82,8 @@ public class EvolvClientImpl : EvolvClientProtocol {
   // meant to be async
   public func subscribe(key: String, defaultValue: Any, function: @escaping (Any) -> Void) {
     let execution = Execution(key, defaultValue, function, participant)
-    let previousAlloc = self.store.get(uid: self.participant.getUserId())
+    let previousAlloc = self.store.get(uid: self.participant.getUserId()) // this will be optional
+    print("previousAlloc: \(String(describing: previousAlloc))")
     if let prevAlloc = previousAlloc {
       let prevJSON = prevAlloc
       do {

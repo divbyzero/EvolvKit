@@ -41,11 +41,13 @@ class Execution<T> {
   func executeWithAllocation(rawAllocations: [JSON]) throws -> Void {
     let type = getMyType(defaultValue)
     let allocations = Allocations(allocations: rawAllocations)
-    let value = try allocations.getValueFromAllocations(key, type, participant)
-    
-    guard let _ = value else {
+    let optionalValue = try allocations.getValueFromAllocations(key, type, participant)
+    print("optioanl value: \(String(describing: optionalValue))")
+    // this is optional needs to be unwrapped
+    guard let value = optionalValue else {
       throw EvolvKeyError.errorMessage
     }
+    print("unwrapped value: \(String(describing: value))")
     let activeExperiements = allocations.getActiveExperiments()
     if alreadyExecuted.isEmpty || alreadyExecuted == activeExperiements {
       // there was a change to the allocations after reconciliation, apply changes
