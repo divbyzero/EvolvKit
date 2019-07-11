@@ -6,11 +6,9 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
 import Alamofire
 import PromiseKit
 import SwiftyJSON
-
 
 public protocol HttpProtocol {
   
@@ -21,7 +19,7 @@ public protocol HttpProtocol {
    is returned. The promise is completed when the result of the request returns.
    
    - Parameters:
-   - url: a valid url representing a call to the Participant API.
+      - url: A valid url representing a call to the Participant API.
    
    - Returns: A response promise as a String
    */
@@ -34,10 +32,10 @@ public protocol HttpProtocol {
    is returned. The future is completed when the result of the request returns.
    
    - Parameters:
-   - url: a valid url representing a call to the Participant API.
+      - url: A valid url representing a call to the Participant API.
    
-   - Returns: A response promise as a String
+   - Returns: Void
    */
-  func sendEvents(url: URL) -> Void
   
+  func sendEvents(url: URL) -> Void
 }

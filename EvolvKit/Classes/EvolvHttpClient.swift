@@ -10,7 +10,6 @@ import Alamofire
 import PromiseKit
 import SwiftyJSON
 
-
 public class EvolvHttpClient : HttpProtocol {
   
   let LOGGER = Log.logger
@@ -44,10 +43,11 @@ public class EvolvHttpClient : HttpProtocol {
       "Host" : "participants.evolv.ai"
     ]
     
-    Alamofire.request(url, method : .get,
-                      parameters : nil,
-                      encoding : JSONEncoding.default ,
-                      headers : headers).responseData { dataResponse in
+    Alamofire.request(url,
+                      method      : .get,
+                      parameters  : nil,
+                      encoding    : JSONEncoding.default ,
+                      headers     : headers).responseData { dataResponse in
       
         self.LOGGER.log(.debug, message: String(describing: dataResponse.request))
         self.LOGGER.log(.debug, message: String(describing: dataResponse.response))

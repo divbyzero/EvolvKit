@@ -6,8 +6,6 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
-
 public class EvolvConfig {
   
   private let httpScheme: String
@@ -80,9 +78,9 @@ public class ConfigBuilder {
    customer's environment id.
    
    - Parameters:
-   - environmentId: unique id representing a customer's environment
-   - httpClient: you may pass in any http client of your choice, defaults to EvolvHttpClient
-   - allocationStore: You may pass in any LruCache of your choice, defaults to EvolvAllocationStore
+      - environmentId: Unique id representing a customer's environment.
+      - httpClient: You may pass in any http client of your choice, defaults to EvolvHttpClient.
+      - allocationStore: You may pass in any LruCache of your choice, defaults to EvolvAllocationStore.
    */
   
   fileprivate init(environmentId: String, httpClient: HttpProtocol = EvolvHttpClient(),
@@ -95,7 +93,7 @@ public class ConfigBuilder {
   /**
    - Sets the domain of the underlying evolvParticipant api.
    - Parameters:
-   - domain: the domain of the evolvParticipant api
+      - domain: The domain of the evolvParticipant api.
    - Returns: EvolvConfigBuilder class
    */
   
@@ -105,10 +103,10 @@ public class ConfigBuilder {
   }
   
   /**
-   - Version of the underlying evolvParticipant api.
+   Version of the underlying evolvParticipant api.
    - Parameters:
-   - version: representation of the required evolvParticipant api version
-   - Returns: EvolvConfigBuilder class
+      - version: Representation of the required evolvParticipant api version.
+   - Returns: EvolvConfigBuilder class.
    */
   public func setVersion(version: String) -> ConfigBuilder {
     self.version = version
@@ -119,7 +117,7 @@ public class ConfigBuilder {
    EvolvAllocationStore interface.
    - Sets up a custom EvolvAllocationStore. Store needs to implement the
    - Parameters:
-   - allocationStore: a custom built allocation store
+      - allocationStore: A custom built allocation store.
    - Returns: EvolvConfigBuilder class
    */
   

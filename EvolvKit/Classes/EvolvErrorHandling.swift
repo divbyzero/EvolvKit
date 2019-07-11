@@ -6,8 +6,6 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
-
 enum NetworkingError: String, Error {
   case invalidRequest = "Invalid request"
   case invalidUrl

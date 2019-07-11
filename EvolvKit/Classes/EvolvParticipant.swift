@@ -6,7 +6,6 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
 import SwiftyJSON
 
 public class EvolvParticipant {
@@ -50,9 +49,8 @@ public class ParticipantBuilder {
   
   /**
    A unique key representing the participant.
-   
    - Parameters:
-   - userId a unique key
+      - userId: A unique key.
    - Returns: this instance of the participant
    */
   
@@ -64,7 +62,7 @@ public class ParticipantBuilder {
   /**
    A unique key representing the participant's session.
    - Parameters:
-   - sessionId a unique key
+      - sessionId: A unique key.
    - Returns: this instance of the participant
    */
   public func setSessionId(sessionId: String) -> ParticipantBuilder {
@@ -75,7 +73,7 @@ public class ParticipantBuilder {
   /**
    Sets the users attributes which can be used to filter users upon.
    - Parameters:
-   - userAttributes a map representing specific attributes that describe the participant
+      - userAttributes: A map representing specific attributes that describe the participant.
    - Returns: this instance of the participant
    */
   public func setUserAttributes(userAttributes: [String : String]) -> ParticipantBuilder {

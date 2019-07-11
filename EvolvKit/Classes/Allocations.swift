@@ -6,12 +6,12 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
 import SwiftyJSON
 
 public class Allocations {
   let allocations: [JSON]
   let audience : Audience = Audience()
+  let LOGGER = Log.logger
   
   init (allocations: [JSON]) {
     self.allocations = allocations
@@ -24,14 +24,9 @@ public class Allocations {
   func getValueFromAllocations<T>(_ key: String, _ type: T, _ participant: EvolvParticipant) throws -> JSON? {
     let keyParts = key.components(separatedBy: ".")
     
-    if (keyParts.isEmpty) { throw EvolvKeyError(rawValue: "Key provided was empty.")! }
-    var alloc = self.allocations
-    let jsonString = "[{\"uid\":\"sandbox_user\",\"eid\":\"experiment_1\",\"cid\":\"candidate_3\",\"genome\":{\"ui\":{\"layout\":\"option_2\",\"buttons\":{\"checkout\":{\"text\":\"Begin Secure Checkout\",\"color\":\"#f3b36d\"},\"info\":{\"text\":\"Product Specifications\",\"color\":\"#f3b36d\"}}},\"search\":{\"weighting\":3.5}},\"excluded\":true}]"
-
-    if let dataFromString = jsonString.data(using: String.Encoding.utf8, allowLossyConversion: false) {
-      alloc = try JSON(data: dataFromString).arrayValue
+    if (keyParts.isEmpty) {
+      throw EvolvKeyError(rawValue: "Key provided was empty.")!
     }
-   
     
     for a in self.allocations {
       print("A: \(a)")
@@ -50,25 +45,18 @@ public class Allocations {
   
   private func getElementFromGenome(genome: JSON, keyParts: [String]) throws -> JSON {
     var element: JSON = genome
-    var success = false
     if element.count <= 0 {
       throw EvolvKeyError(rawValue: "Allocation genome was empty")!
     }
     
-    // dynamically construct an object key to get at value here
     for part in keyParts {
-      print("******** PART: \(part)")
-      
-        let object = element[part]
-        print("********* object: \(object)")
-        element = object
-        print("Element: \(element)")
-      
-        // check if element
-        if (element.error == nil) {
-          print("success: \(success)")
-        }
-      // throw EvolvKeyError(rawValue: "element fails")!
+      let object = element[part]
+      element = object
+    
+      if (element.error == nil) {
+        // throw EvolvKeyError(rawValue: "element fails")!
+        LOGGER.log(.error, message: "Element fails")
+      }
     }
     print("element: \(element)")
     return element

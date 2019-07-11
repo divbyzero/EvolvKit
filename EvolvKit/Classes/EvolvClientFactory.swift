@@ -6,18 +6,16 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
 public class EvolvClientFactory {
-  public let LOGGER = Log.logger
-  
   /**
-   * Creates instances of the EvolvClient.
-   *
-   * @param config general configurations for the SDK
-   * @return an instance of EvolvClient
+   Creates instances of the EvolvClient.
+   - Parameters:
+   - config: General configurations for the SDK.
+   - Returns:  an instance of EvolvClient
    */
   
   public var client: EvolvClientProtocol
+  public let LOGGER = Log.logger
   
   public init(config: EvolvConfig) {
     LOGGER.log(.debug, message: "Initializing Evolv Client.")
@@ -26,12 +24,13 @@ public class EvolvClientFactory {
   }
   
   /**
-   * Creates instances of the EvolvClient.
-   *
-   * @param config general configurations for the SDK
-   * @param participant the participant for the initialized client
-   * @return an instance of EvolvClient
+   Creates instances of the EvolvClient.
+   - Parameters:
+       - config: General configurations for the SDK.
+       - participant: The participant for the initialized client.
+   - Returns: an instance of EvolvClient
    */
+  
   public init(config: EvolvConfig, participant: EvolvParticipant) {
     LOGGER.log(.debug, message: "Initializing Evolv Client.")
     self.client = EvolvClientFactory.createClient(config: config, participant: participant)

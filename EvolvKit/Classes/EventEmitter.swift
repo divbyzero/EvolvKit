@@ -6,7 +6,6 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
 import SwiftyJSON
 
 public class EventEmitter {
@@ -30,13 +29,12 @@ public class EventEmitter {
   
   public func emit(_ key: String) -> Void {
     let url: URL = createEventUrl(type: key, score: 1.0)
-    let eventPromise = makeEventRequest(url)
-    print(eventPromise)
+    _ = makeEventRequest(url)
   }
   
   public func emit(_ key: String, _ score: Double) -> Void {
     let url: URL = createEventUrl(type: key, score: score)
-    makeEventRequest(url)
+    _ = makeEventRequest(url)
   }
   
   public func confirm(allocations: [JSON]) -> Void {
@@ -56,7 +54,7 @@ public class EventEmitter {
         let url = createEventUrl(type: key, experimentId: eid, candidateId: cid)
         makeEventRequest(url)
         
-        // if the event is filtered: send message
+        // TODO: Add audience filter logic here
         let message: String = "\(key) event filtered"
         LOGGER.log(.debug, message: message)
       }
@@ -81,8 +79,7 @@ public class EventEmitter {
       LOGGER.log(.debug, message: message)
       return URL(string: "")!
     }
-    // This url works in postman
-    print("URL with type and score: \(url)")
+
     return url
   }
   
@@ -101,26 +98,21 @@ public class EventEmitter {
     ]
     
     guard let url = components.url else {
-      let message: String = "Error creating event url with Experiment ID and Candidate ID."
+      let message: String = "Error creating event url with experimentID and candidateID."
       LOGGER.log(.debug, message: message)
       return URL(string: "")!
     }
-    print("URL with type, eid, cid: \(url)")
+
     return url
   }
   
-  // TODO: finish this method, ensure is async
   private func makeEventRequest(_ url: URL?) -> Void {
     guard let unwrappedUrl = url else {
       let message = "The event url was nil, skipping event request."
       LOGGER.log(.debug, message: message)
       return
     }
-    print("Unwrapped URL: \(unwrappedUrl)")
-//    let strUrl = "https://participants.evolv.ai/v1/sandbox/events"
-//    let encodedUrl = strUrl.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-//    let typeUrl = URL(string: encodedUrl)!
-    let _ = httpClient.sendEvents(url: unwrappedUrl)
     
+    let _ = httpClient.sendEvents(url: unwrappedUrl)
   }
 }

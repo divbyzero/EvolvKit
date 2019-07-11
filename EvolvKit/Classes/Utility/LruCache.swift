@@ -6,7 +6,6 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
 import SwiftyJSON
 
 public class LRUCache {
@@ -18,7 +17,6 @@ public class LRUCache {
   
   static let share = LRUCache(maxSize)
   public init(_ maxSize: Int = 10) {
-    // LRUCache.maxSize = maxSize
   }
   
   public func get(_ key: String) -> [JSON]? {

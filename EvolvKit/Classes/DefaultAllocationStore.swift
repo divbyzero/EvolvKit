@@ -6,7 +6,6 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
 import SwiftyJSON
 
 public class DefaultAllocationStore : AllocationStoreProtocol {

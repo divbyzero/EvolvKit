@@ -6,12 +6,11 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
-
 public protocol EvolvAction {
   /**
-   * Applies a given value to a set of instructions.
-   * @param value any value that was requested
+   Applies a given value to a set of instructions.
+   - Parameters:
+      - value: Any value that was requested.
    */
   func apply<T>(value: T) -> Void
 }

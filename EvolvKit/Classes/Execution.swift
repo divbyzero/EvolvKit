@@ -6,13 +6,11 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
 import SwiftyJSON
 
 protocol Default {
   associatedtype T
 }
-
 
 class Execution<T> {
   
@@ -28,7 +26,7 @@ class Execution<T> {
        _ participant: EvolvParticipant) {
     self.key = key
     self.defaultValue = defaultValue
-    self.function = function as! (Any) -> Void
+    self.function = function
     self.participant = participant
   }
   
@@ -42,14 +40,14 @@ class Execution<T> {
     let type = getMyType(defaultValue)
     let allocations = Allocations(allocations: rawAllocations)
     let optionalValue = try allocations.getValueFromAllocations(key, type, participant)
-    print("optioanl value: \(String(describing: optionalValue))")
-    // this is optional needs to be unwrapped
+  
     guard let value = optionalValue else {
       throw EvolvKeyError.errorMessage
     }
-    print("unwrapped value: \(String(describing: value))")
+    
     let activeExperiements = allocations.getActiveExperiments()
     if alreadyExecuted.isEmpty || alreadyExecuted == activeExperiements {
+      
       // there was a change to the allocations after reconciliation, apply changes
       function(value as Any)
     }

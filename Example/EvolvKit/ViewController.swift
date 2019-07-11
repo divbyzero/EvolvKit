@@ -18,8 +18,19 @@ class ViewController: UIViewController {
   let store = DefaultAllocationStore(size: 1000)
   var allocations = [JSON]()
   var client : EvolvClientProtocol?
+  let LOGGER = Log.logger
   
   @IBAction func didPressCheckOut(_ sender: Any) {
+    var alloc = self.allocations
+    let jsonString = "[{\"uid\":\"sandbox_user\",\"eid\":\"experiment_1\",\"cid\":\"candidate_3\",\"genome\":{\"ui\":{\"layout\":\"option_2\",\"buttons\":{\"checkout\":{\"text\":\"Begin Secure Checkout\",\"color\":\"#f3b36d\"},\"info\":{\"text\":\"Product Specifications\",\"color\":\"#f3b36d\"}}},\"search\":{\"weighting\":3.5}},\"excluded\":true}]"
+    
+    if let dataFromString = jsonString.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+      do {
+        alloc = try JSON(data: dataFromString).arrayValue
+      } catch {
+        LOGGER.log(.error, message: "OOPS!")
+      }
+    }
     self.textLabel.text = "Conversion!"
     let key = getJsonData()
     print("checked out")

@@ -6,7 +6,6 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
 import SwiftyJSON
 
 public class ExecutionQueue {
@@ -26,7 +25,8 @@ public class ExecutionQueue {
       do {
         try execution.executeWithAllocation(rawAllocations: allocations)
       } catch {
-        let message = "There was an error retrieving the value of \(execution.getKey()) from the allocation."
+        let message = "There was an error retrieving the value of " +
+          "\(execution.getKey()) from the allocation."
         LOGGER.log(.debug, message: message)
         execution.executeWithDefault()
       }

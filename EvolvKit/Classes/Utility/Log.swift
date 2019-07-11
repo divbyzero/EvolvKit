@@ -6,8 +6,6 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
-
 public protocol Logger {
   func log(_ level: Log.Level, message: String)
 }

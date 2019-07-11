@@ -6,31 +6,27 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
 import SwiftyJSON
 
-// This is the inerface for the client
 public protocol AllocationStoreProtocol {
   
   /**
-   * Retrieves a JsonArray.
-   * <p>
-   *     Retrieves a JsonArray that represents the participant's allocations.
-   *     If there are no stored allocations, should return an empty JsonArray.
-   * </p>
-   * @param uid the participant's unique id
-   * @return an allocation if one exists else an empty JsonArray
+   Retrieves a JsonArray.
+   - Retrieves a JsonArray converted to json using SwiftyJSON. JsonArray represents the participant's allocations.
+   If there are no stored allocations, should return an empty SwiftyJSON array.
+   - Parameters:
+      - uid: The participant's unique id.
+   - Returns: a SwiftyJSON array of allocation if one exists, else an empty SwiftyJSON array.
    */
   
-  func get(uid: String) -> [JSON]? // FIXME: can this ever return an empty string?
+  func get(uid: String) -> [JSON]?
   
   /**
-   * Stores a JsonArray.
-   * <p>
-   *     Stores the given JsonArray.
-   * </p>
-   * @param uid the participant's unique id
-   * @param allocations the participant's allocations
+   Stores a JsonArray.
+   - Stores the given SwiftyJSON array.
+   - Parameters:
+      - uid: The participant's unique id.
+      - allocations: The participant's allocations.
    */
   func set(uid: String, allocations: [JSON]) -> ()
 }

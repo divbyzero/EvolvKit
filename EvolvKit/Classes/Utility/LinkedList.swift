@@ -6,8 +6,6 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
-
 public final class LinkedList<T> {
   
   public class LinkedListNode<T> {
@@ -112,7 +110,8 @@ public final class LinkedList<T> {
       prev = next
       next = next!.next
     }
-    assert(i == 0)  // if > 0, then specified index was too large
+    // if > 0, then specified index was too large
+    assert(i == 0)
     return (prev, next)
   }
   
