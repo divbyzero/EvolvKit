@@ -112,13 +112,12 @@ public class EvolvClientImpl : EvolvClientProtocol {
     execution.executeWithDefault()
   }
   
+  public func emitEvent(key: String) -> Void {
+    self.eventEmitter.emit(key)
+  }
   
   public func emitEvent(key: String, score: Double) -> Void {
     self.eventEmitter.emit(key, score)
-  }
-  
-  public func emitEvent(key: String) -> Void {
-    self.eventEmitter.emit(key)
   }
   
   public func confirm() -> Void {

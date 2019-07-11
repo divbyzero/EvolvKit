@@ -38,6 +38,6 @@ public protocol HttpProtocol {
    * @param url a valid url representing a call to the Participant API.
    * @return a response future
    */
-  func post(url: URL) -> PromiseKit.Promise<JSON>
+  func post(url: URL) -> Void
   
 }

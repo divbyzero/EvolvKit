@@ -6,13 +6,14 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Foundation
 import Alamofire
 import PromiseKit
 import SwiftyJSON
 
 
 public class EvolvHttpClient : HttpProtocol {
+  
+  let LOGGER = Log.logger
   
   public init () {}
   
@@ -25,38 +26,38 @@ public class EvolvHttpClient : HttpProtocol {
           switch response.result {
           case .success( _):
             
-            if let string = response.result.value {
-              print("UR FETCHED JSON: \(string)")
-              resolver.fulfill(string)
+            if let responseString = response.result.value {
+              self.LOGGER.log(.debug, message: String(describing: responseString))
+              resolver.fulfill(responseString)
             }
           case .failure(let error):
+            self.LOGGER.log(.error, message: String(describing: error))
             resolver.reject(error)
           }
       }
     }
   }
   
-  // This is just for the emitter
-  public func post(url: URL) -> Promise<JSON> {
-    return Promise<JSON> { resolver -> Void in
+  public func post(url: URL) -> Void {
+    let headers = [
+      "Content-Type": "application/json",
+      "Host" : "participants.evolv.ai"
+    ]
+    
+    Alamofire.request(url, method : .get,
+                      parameters : nil,
+                      encoding : JSONEncoding.default ,
+                      headers : headers).responseData { dataResponse in
       
-      Alamofire.request(url, method: .post, encoding: JSONEncoding.default)
-        .validate()
-        .responseJSON { response in
-          switch response.result {
-          case .success(let json):
-            if let data = response.data {
-              guard let json = try? JSON(data: data) else {
-                resolver.reject("Error" as! Error)
-                return
-              }
-              resolver.fulfill(json)
-            }
-          case .failure(let error):
-            resolver.reject(error)
-          }
-      }
-      
+        self.LOGGER.log(.debug, message: String(describing: dataResponse.request))
+        self.LOGGER.log(.debug, message: String(describing: dataResponse.response))
+        
+        if dataResponse.response?.statusCode == 202 {
+          self.LOGGER.log(.debug, message: "Event has been emitted to Evolv")
+        } else {
+          self.LOGGER.log(.error, message: "Error sending data to Evolv" +
+            " \(String(describing: dataResponse.response?.statusCode))")
+        }
     }
   }
 }

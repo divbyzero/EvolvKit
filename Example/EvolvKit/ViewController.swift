@@ -31,10 +31,10 @@ class ViewController: UIViewController {
   
   // This is also necessary when extending the superclass.
   required init?(coder aDecoder: NSCoder) {
-    let envId = "40ebcd9abf"
+    let envId = "sandbox"
     let httpClient = EvolvHttpClient()
     let config = EvolvConfig.builder(environmentId: envId, httpClient: httpClient).setEvolvAllocationStore(allocationStore: store).build()
-    let participant = EvolvParticipant.builder().build()
+    let participant = EvolvParticipant.builder().setUserId(userId: "sandbox_user").build()
     print("\(participant)")
     client = EvolvClientFactory(config: config, participant: participant).client as! EvolvClientImpl
     client?.confirm()
@@ -62,10 +62,9 @@ private extension ViewController {
     // get this to execute on the main thread and change the UI
     func printStuff(value: Any) { print("DO STUFF with \(value)") }
     // Client makes the call to get the allocations
-    let someValue = client.subscribe(key: key, defaultValue: "#ffffff", function: printStuff)
-    print(someValue)
-    client.emitEvent(key: key)
-    client.contaminate()
+    client.subscribe(key: key, defaultValue: "#ffffff", function: printStuff)
+    client.emitEvent(key: key, score: 1.0)
+    // client.contaminate()
     return key
   }
 }
