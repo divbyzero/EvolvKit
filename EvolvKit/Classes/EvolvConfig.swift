@@ -60,7 +60,7 @@ public class EvolvConfig {
 public class ConfigBuilder {
   
   static let DEFAULT_HTTP_SCHEME = "https"
-  static let DEFAULT_DOMAIN = "participants-phyllis.evolv.ai"
+  static let DEFAULT_DOMAIN = "participants.evolv.ai"
   static let DEFAULT_API_VERSION = "v1"
   
   private static let DEFAULT_ALLOCATION_STORE_SIZE = 1000

@@ -13,8 +13,8 @@ public class EventEmitter {
   
   private let LOGGER = Log.logger
   
-  public static let CONFIRM_KEY: String = "confirmation"
-  public static let CONTAMINATE_KEY: String = "contamination"
+  public let CONFIRM_KEY: String = "confirmation"
+  public let CONTAMINATE_KEY: String = "contamination"
   
   let httpClient: HttpProtocol
   let config: EvolvConfig
@@ -22,30 +22,29 @@ public class EventEmitter {
   
   let audience = Audience()
   
-  init(config: EvolvConfig,
-       participant: EvolvParticipant,
-       httpClient: HttpProtocol = EvolvHttpClient()) {
+  init(config: EvolvConfig, participant: EvolvParticipant) {
     self.config = config
     self.participant = participant
-    self.httpClient = httpClient
+    self.httpClient = config.getHttpClient()
   }
   
   public func emit(_ key: String) -> Void {
-    let url: URL = createEventUrl(key, 1.0)
-    makeEventRequest(url)
+    let url: URL = createEventUrl(type: key, score: 1.0)
+    let eventPromise = makeEventRequest(url)
+    print(eventPromise)
   }
   
   public func emit(_ key: String, _ score: Double) -> Void {
-    let url: URL = createEventUrl(key, score);
-    makeEventRequest(url);
+    let url: URL = createEventUrl(type: key, score: score)
+    makeEventRequest(url)
   }
   
   public func confirm(allocations: [JSON]) -> Void {
-    sendAllocationEvents(EventEmitter.CONFIRM_KEY, allocations);
+    sendAllocationEvents(CONFIRM_KEY, allocations)
   }
   
   public func contaminate(allocations: [JSON]) -> Void {
-    sendAllocationEvents(EventEmitter.CONTAMINATE_KEY, allocations);
+    sendAllocationEvents(CONTAMINATE_KEY, allocations)
   }
   
   public func sendAllocationEvents(_ key: String, _ allocations: [JSON]) {
@@ -64,7 +63,7 @@ public class EventEmitter {
     }
   }
   
-  func createEventUrl(_ type: String , _ score: Double ) -> URL {
+  func createEventUrl(type: String , score: Double ) -> URL {
     var components = URLComponents()
     
     components.scheme = config.getHttpScheme()
@@ -82,6 +81,8 @@ public class EventEmitter {
       LOGGER.log(.debug, message: message)
       return URL(string: "")!
     }
+    // This url works in postman
+    print("URL with type and score: \(url)")
     return url
   }
   
@@ -104,18 +105,22 @@ public class EventEmitter {
       LOGGER.log(.debug, message: message)
       return URL(string: "")!
     }
+    print("URL with type, eid, cid: \(url)")
     return url
   }
   
+  // TODO: finish this method, ensure is async
   private func makeEventRequest(_ url: URL?) -> Void {
-    // TODO: finish this method, ensure is async
-    guard let url = url else {
+    guard let unwrappedUrl = url else {
       let message = "The event url was nil, skipping event request."
       LOGGER.log(.debug, message: message)
       return
     }
-    let _ = httpClient.post(url: url).done { (rsp) in
-      print(rsp)
-    }
+    print("Unwrapped URL: \(unwrappedUrl)")
+//    let strUrl = "https://participants.evolv.ai/v1/sandbox/events"
+//    let encodedUrl = strUrl.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+//    let typeUrl = URL(string: encodedUrl)!
+    let _ = httpClient.post(url: unwrappedUrl)
+    
   }
 }
