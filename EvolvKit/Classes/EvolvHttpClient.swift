@@ -38,7 +38,7 @@ public class EvolvHttpClient : HttpProtocol {
     }
   }
   
-  public func post(url: URL) -> Void {
+  public func sendEvents(url: URL) -> Void {
     let headers = [
       "Content-Type": "application/json",
       "Host" : "participants.evolv.ai"

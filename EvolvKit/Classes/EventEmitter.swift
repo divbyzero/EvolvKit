@@ -120,7 +120,7 @@ public class EventEmitter {
 //    let strUrl = "https://participants.evolv.ai/v1/sandbox/events"
 //    let encodedUrl = strUrl.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
 //    let typeUrl = URL(string: encodedUrl)!
-    let _ = httpClient.post(url: unwrappedUrl)
+    let _ = httpClient.sendEvents(url: unwrappedUrl)
     
   }
 }

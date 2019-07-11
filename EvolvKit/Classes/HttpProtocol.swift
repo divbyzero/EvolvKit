@@ -15,29 +15,29 @@ import SwiftyJSON
 public protocol HttpProtocol {
   
   /**
-   * Performs a GET request using the provided url.
-   * <p>
-   *     This call is asynchronous, the request is sent and a completable future
-   *     is returned. The future is completed when the result of the request returns.
-   *     The timeout of the request is determined in the implementation of the
-   *     HttpClient.
-   * </p>
-   * @param url a valid url representing a call to the Participant API.
-   * @return a response future
+   - Performs a GET request to the **allocations endpoint** using the provided url.
+   
+   This call is asynchronous, the request is sent and a completable promise
+   is returned. The promise is completed when the result of the request returns.
+   
+   - Parameters:
+   - url: a valid url representing a call to the Participant API.
+   
+   - Returns: A response promise as a String
    */
   func get(url: URL) -> PromiseKit.Promise<String>
   
   /**
-   * Performs a POST request using the provided url.
-   * <p>
-   *     This call is asynchronous, the request is sent and a completable future
-   *     is returned. The future is completed when the result of the request returns.
-   *     The timeout of the request is determined in the implementation of the
-   *     HttpClient.
-   * </p>
-   * @param url a valid url representing a call to the Participant API.
-   * @return a response future
+   - Performs a GET request to the **events endpoint** using the provided url.
+   
+   This call is asynchronous, the request is sent and a completable future
+   is returned. The future is completed when the result of the request returns.
+   
+   - Parameters:
+   - url: a valid url representing a call to the Participant API.
+   
+   - Returns: A response promise as a String
    */
-  func post(url: URL) -> Void
+  func sendEvents(url: URL) -> Void
   
 }
