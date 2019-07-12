@@ -18,7 +18,7 @@ public class ExecutionQueue {
     self.queue.add(execution)
   }
   
-  func executeAllWithValuesFromAllocations(allocations: [JSON]) {
+  func executeAllWithValuesFromAllocations(allocations: [JSON]) throws {
     while !queue.isEmpty {
       let execution: Execution = queue.remove()!
       

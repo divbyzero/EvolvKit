@@ -94,7 +94,7 @@ public class Allocator {
         }
         resolve.fulfill(allocations)
         do {
-          try self.executionQueue.executeAllWithValuesFromAllocations(allocations: allocations)
+          try? self.executionQueue.executeAllWithValuesFromAllocations(allocations: allocations)
         } catch let err {
           let message = "There was an error executing with allocations. \(err.localizedDescription)"
           self.LOGGER.log(.error, message: message)

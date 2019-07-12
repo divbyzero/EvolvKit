@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EvolvKit'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'Autonomous Optimizations Tool'
   s.description      = <<-DESC
   'This SDK is designed to be integrated into projects to allow for autonomous UI optimozations'
@@ -12,8 +12,6 @@ Pod::Spec.new do |s|
   s.swift_version    = '5.0'
   s.ios.deployment_target = '9.0'
   s.source_files     = 'EvolvKit/Classes/**/*'
-  s.frameworks       = 'Foundation'
-  s.frameworks       = 'UIKit'
   s.dependency 'Alamofire'
   s.dependency 'SwiftyJSON', '~> 4.0'
   s.dependency 'PromiseKit', '~> 6.8'
