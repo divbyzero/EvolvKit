@@ -78,9 +78,9 @@ public class EvolvClientImpl : EvolvClientProtocol {
     return value
   }
   
-  // meant to be async
-  public func subscribe(key: String, defaultValue: Any, function: @escaping (Any) -> Void) {
-    let execution = Execution(key, defaultValue, function, participant)
+  public func subscribe(key: String, defaultValue: Any, function: @escaping (Any) -> ()) {
+    // let execution = Execution(key, defaultValue, function, participant)
+    let execution = Execution(key, defaultValue, participant, function)
     let previousAlloc = self.store.get(uid: self.participant.getUserId())
     print("previousAlloc: \(String(describing: previousAlloc))")
     if let prevAlloc = previousAlloc {

@@ -21,6 +21,7 @@ public class Allocations {
     return type(of: element)
   }
   
+  // FIXME: clean this up!
   func getValueFromAllocations<T>(_ key: String, _ type: T, _ participant: EvolvParticipant) throws -> JSON? {
     let keyParts = key.components(separatedBy: ".")
     
@@ -29,10 +30,8 @@ public class Allocations {
     }
     
     for a in self.allocations {
-      print("A: \(a)")
       let genome = a["genome"]
       let element = try getElementFromGenome(genome: genome, keyParts: keyParts)
-      print("element: \(element)")
       if element.error == nil {
         return element
       } else {
