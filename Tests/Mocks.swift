@@ -202,6 +202,10 @@ class AllocatorMock: EvolvAllocator {
         sandbagContamationWasCalled = true
     }
     
+    override func getAllocationStatus() -> AllocationStatus {
+        return allocationStatus
+    }
+    
 }
 
 class EventEmitterMock: EvolvEventEmitter {

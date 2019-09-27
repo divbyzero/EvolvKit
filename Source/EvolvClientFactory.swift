@@ -34,7 +34,7 @@ public class EvolvClientFactory: NSObject {
         let previousAllocations = store.get(participant.userId)
         let allocator = EvolvAllocator(config: config, participant: participant)
         let futureAllocations = allocator.fetchAllocations()
-        let eventEmitter = EvolvEventEmitter(config: config, participant: participant)
+        let eventEmitter = EvolvEventEmitter(config: config, participant: participant, store: store)
         
         defer {
             EvolvLogger.shared.debug("Initialized Evolv Client.")
