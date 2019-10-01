@@ -440,7 +440,6 @@ class ClientImplTest: XCTestCase {
         self.testValue = 0.0
     }
     
-    
     func test_RawAllocationTouchState() {
         let actualConfig = EvolvConfig.builder(environmentId: environmentId, httpClient: mockHttpClient).build()
         let store = DefaultEvolvAllocationStore(size: 10)

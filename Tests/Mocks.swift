@@ -183,7 +183,7 @@ class AllocatorMock: EvolvAllocator {
     var config: EvolvConfig
     var participant: EvolvParticipant
     
-    var allocationStatus: AllocationStatus
+    var allocationStatus: EvolvAllocationStatus
     
     override init(config: EvolvConfig, participant: EvolvParticipant) {
         self.config = config
@@ -202,7 +202,7 @@ class AllocatorMock: EvolvAllocator {
         sandbagContamationWasCalled = true
     }
     
-    override func getAllocationStatus() -> AllocationStatus {
+    override func getAllocationStatus() -> EvolvAllocationStatus {
         return allocationStatus
     }
     
@@ -266,7 +266,7 @@ class EventEmitterMock: EvolvEventEmitter {
     
     /// emitter.confirm => sendAllocationEvents => makeEventRequest => httpClient.sendEvents()
     override public func confirm(rawAllocations allocations: [EvolvRawAllocation]) {
-        sendAllocationEvents(forKey:  Key.confirm.rawValue, rawAllocations: allocations)
+        sendAllocationEvents(forKey: Key.confirm.rawValue, rawAllocations: allocations)
         confirmWithAllocationsWasCalled = true
     }
     

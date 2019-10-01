@@ -18,13 +18,11 @@
 
 import PromiseKit
 
+protocol EvolvAllocatorDelegate: AnyObject {
+    func didChangeAllocationStatus(_ allocationStatus: EvolvAllocationStatus)
+}
+
 class EvolvAllocator {
-    
-    public enum AllocationStatus {
-        case fetching
-        case retrieved
-        case failed
-    }
     
     private let logger = EvolvLogger.shared
     
@@ -37,7 +35,14 @@ class EvolvAllocator {
     
     private var confirmationSandbagged: Bool = false
     private var contaminationSandbagged: Bool = false
-    private var allocationStatus: AllocationStatus
+    
+    weak var delegate: EvolvAllocatorDelegate?
+    
+    private var allocationStatus: EvolvAllocationStatus {
+        didSet {
+            delegate?.didChangeAllocationStatus(allocationStatus)
+        }
+    }
     
     private lazy var jsonDecoder: JSONDecoder = JSONDecoder()
     
@@ -51,7 +56,7 @@ class EvolvAllocator {
         self.eventEmitter = EvolvEventEmitter(config: config, participant: participant, store: store)
     }
     
-    func getAllocationStatus() -> AllocationStatus {
+    func getAllocationStatus() -> EvolvAllocationStatus {
         return allocationStatus
     }
     

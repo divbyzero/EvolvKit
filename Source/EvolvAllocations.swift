@@ -18,6 +18,12 @@
 
 import Foundation
 
+@objc public enum EvolvAllocationStatus: Int {
+    case fetching
+    case retrieved
+    case failed
+}
+
 class EvolvAllocations {
     
     enum Error: LocalizedError, Equatable {
