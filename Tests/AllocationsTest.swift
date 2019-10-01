@@ -148,16 +148,4 @@ class AllocationsTest: XCTestCase {
         }
     }
     
-    func test_ThrowIncorrectKeyPart() {
-        // given
-        let allocations = EvolvAllocations(TestData.rawAllocations, store: mockAllocationStore)
-        let key = "search.weighting2.distance"
-        
-        // when & then
-        XCTAssertThrowsError(try allocations.value(forKey: key, participant: participant)) { error in
-            XCTAssertEqual(error as! EvolvRawAllocationNode.Error,
-                           EvolvRawAllocationNode.Error.incorrectKey(key: "search.weighting2"))
-        }
-    }
-    
 }

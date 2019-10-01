@@ -61,11 +61,12 @@ class EvolvAllocations {
                 if let node = try genome.node(forKey: key) {
                     // touch current allocation & re-save allocations
                     allocation.state.insert(.touched)
-                    store.put(participant.userId, rawAllocations)
                     
                     // return node
                     return node
                 }
+            } catch {
+                logger.error("Unable to find key '\(key)' in experiment \(allocation.experimentId).")
             }
         }
         

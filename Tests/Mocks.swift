@@ -170,7 +170,7 @@ class ClientMock: DefaultEvolvClient {
     }
     
     public func contaminate(_ eventEmitter: EventEmitterMock, _ allocations: [EvolvRawAllocation]) {
-        eventEmitter.confirm(rawAllocations: allocations)
+        eventEmitter.contaminate(rawAllocations: allocations)
     }
     
 }
@@ -213,17 +213,46 @@ class EventEmitterMock: EvolvEventEmitter {
     let httpClientMock = HttpClientMock()
     var confirmWithAllocationsWasCalled = false
     var contaminateWithAllocationsWasCalled = false
+    let testContaminateKey = "test_contaminate_key"
+    let testConfirmKey = "test_confirm_key"
     
-    override func sendAllocationEvents(forKey key: String, rawAllocations allocations: [EvolvRawAllocation]) {
-        let eid = allocations[0].experimentId
-        let cid = allocations[0].candidateId
-        
-        guard let url = createEventUrl(type: key, experimentId: eid, candidateId: cid) else {
-            return
-        }
-        
-        makeEventRequest(url)
-    }
+//    override func sendAllocationEvents(forKey key: String, rawAllocations: [EvolvRawAllocation]) {
+//        guard rawAllocations.isEmpty == false else {
+//            return
+//        }
+//
+//        for allocation in rawAllocations {
+//            if allocation.isFilter(userAttributes: participant.userAttributes) {
+//                logger.debug("\(key) event filtered")
+//                continue
+//            }
+//
+//            guard allocation.state.contains(.touched) else {
+//                logger.debug("\(key) event filtered (not touched)")
+//                continue
+//            }
+//
+//            guard EvolvRawAllocation.State.submitted.subtracting(allocation.state) == .submitted else {
+//                logger.debug("\(key) event filtered (already submitted)")
+//                continue
+//            }
+//
+//            let url = createEventUrl(type: key,
+//                                     experimentId: allocation.experimentId,
+//                                     candidateId: allocation.candidateId)
+//            makeEventRequest(url)
+//
+//            // mark confirmed || contaminated
+//            switch key {
+//            case Key.confirm.rawValue:
+//                allocation.state.insert(.confirmed)
+//            case Key.contaminate.rawValue:
+//                allocation.state.insert(.contaminated)
+//            default:
+//                break
+//            }
+//        }
+//    }
     
     private func makeEventRequest(_ url: URL) {
         httpClientMock.sendEvents(url)
@@ -231,15 +260,13 @@ class EventEmitterMock: EvolvEventEmitter {
     
     /// emitter.contaminate => sendAllocationEvents => makeEventRequest => httpClient.sendEvents()
     override public func contaminate(rawAllocations allocations: [EvolvRawAllocation]) {
-        let testKey = "test_key"
-        sendAllocationEvents(forKey: testKey, rawAllocations: allocations)
+        sendAllocationEvents(forKey: Key.contaminate.rawValue, rawAllocations: allocations)
         contaminateWithAllocationsWasCalled = true
     }
     
     /// emitter.confirm => sendAllocationEvents => makeEventRequest => httpClient.sendEvents()
     override public func confirm(rawAllocations allocations: [EvolvRawAllocation]) {
-        let testKey = "test_key"
-        sendAllocationEvents(forKey: testKey, rawAllocations: allocations)
+        sendAllocationEvents(forKey:  Key.confirm.rawValue, rawAllocations: allocations)
         confirmWithAllocationsWasCalled = true
     }
     
