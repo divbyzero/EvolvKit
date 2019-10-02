@@ -17,7 +17,6 @@
 		E26DB2C922EB2D30007B997F /* CustomAllocationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26DB2C822EB2D30007B997F /* CustomAllocationStore.swift */; };
 		E27A86E723437C5C00FE8CDB /* EvolvClientHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A86E623437C5C00FE8CDB /* EvolvClientHelper.swift */; };
 		E27A86E92343A92700FE8CDB /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A86E82343A92700FE8CDB /* LoadingViewController.swift */; };
-		E27A86EB2343AF2400FE8CDB /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A86EA2343AF2400FE8CDB /* ProductInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +36,6 @@
 		E26DB2C822EB2D30007B997F /* CustomAllocationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAllocationStore.swift; sourceTree = "<group>"; };
 		E27A86E623437C5C00FE8CDB /* EvolvClientHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolvClientHelper.swift; sourceTree = "<group>"; };
 		E27A86E82343A92700FE8CDB /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		E27A86EA2343AF2400FE8CDB /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +88,6 @@
 				E26DB2B622EB21DB007B997F /* AppDelegate.swift */,
 				E27A86E82343A92700FE8CDB /* LoadingViewController.swift */,
 				E26DB2B822EB21DB007B997F /* ViewController.swift */,
-				E27A86EA2343AF2400FE8CDB /* ProductInfoViewController.swift */,
 				E23A257122F1AA87000B9611 /* Extensions.swift */,
 				E26DB2BA22EB21DB007B997F /* Main.storyboard */,
 				E26DB2BD22EB21DC007B997F /* Assets.xcassets */,
@@ -228,7 +225,6 @@
 				E26DB2C922EB2D30007B997F /* CustomAllocationStore.swift in Sources */,
 				E26DB2B722EB21DB007B997F /* AppDelegate.swift in Sources */,
 				E23A257222F1AA87000B9611 /* Extensions.swift in Sources */,
-				E27A86EB2343AF2400FE8CDB /* ProductInfoViewController.swift in Sources */,
 				E27A86E92343A92700FE8CDB /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

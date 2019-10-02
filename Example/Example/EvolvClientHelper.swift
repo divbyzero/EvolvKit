@@ -9,17 +9,20 @@
 import Foundation
 import EvolvKit
 
-final class EvolvClientHelper: NSObject {
+final class EvolvClientHelper {
     
     static let shared = EvolvClientHelper()
+    
+    private let environmentId: String = "sandbox"
+    private let userId: String = "sandbox_user"
     
     private(set) var client: EvolvClient?
     private var httpClient: EvolvHttpClient
     private var store: EvolvAllocationStore
     
-    var onChangeClientStatus: ((_ clientStatus: EvolvClientStatus) -> Void)?
+    var didChangeClientStatus: ((_ clientStatus: EvolvClientStatus) -> Void)?
     
-    private override init() {
+    private init() {
         /*
          When you receive the fetched json from the participants API, it will be as type String.
          If you use the DefaultEvolvHttpClient, the string will be parsed to EvolvRawAllocation array
@@ -33,20 +36,17 @@ final class EvolvClientHelper: NSObject {
 
         /// - Build config with custom timeout and custom allocation store
         // set client to use sandbox environment
-        let config = EvolvConfig.builder(environmentId: "sandbox", httpClient: httpClient)
+        let config = EvolvConfig.builder(environmentId: environmentId, httpClient: httpClient)
             .set(allocationStore: store)
             .build()
         
         // set error or debug logLevel for debugging
-        config.set(logLevel: .debug)
-        
-        
-        super.init()
+        config.set(logLevel: .error)
         
         /// - Initialize the client with a stored user
         /// fetches allocations from Evolv, and stores them in a custom store
         client = EvolvClientFactory.createClient(config: config,
-                                                 participant: EvolvParticipant.builder().set(userId: "sandbox_user").build(),
+                                                 participant: EvolvParticipant.builder().set(userId: userId).build(),
                                                  delegate: self)
         
         /// - Initialize the client with a new user
@@ -59,7 +59,7 @@ final class EvolvClientHelper: NSObject {
 extension EvolvClientHelper: EvolvClientDelegate {
     
     func didChangeClientStatus(_ status: EvolvClientStatus) {
-        onChangeClientStatus?(status)
+        didChangeClientStatus?(status)
     }
     
 }

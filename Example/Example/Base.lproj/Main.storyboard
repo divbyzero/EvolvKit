@@ -122,7 +122,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="didPressProductInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PLC-P2-77k"/>
-                                            <segue destination="mdS-H9-hNg" kind="show" id="pOC-Ki-sVh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -146,25 +145,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1517" y="139"/>
-        </scene>
-        <!--Product Info-->
-        <scene sceneID="JSw-Ky-8tW">
-            <objects>
-                <viewController id="mdS-H9-hNg" customClass="ProductInfoViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ca2-Bq-S8M"/>
-                        <viewControllerLayoutGuide type="bottom" id="J9y-vp-Qrk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KNq-W6-Ueh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Product Info" id="Qwb-Gx-PWk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K8R-T7-Ro3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2288" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5ez-E5-S0M">

@@ -25,7 +25,7 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        EvolvClientHelper.shared.onChangeClientStatus = { [weak self] status in
+        EvolvClientHelper.shared.didChangeClientStatus = { [weak self] status in
             switch status {
             case .ready:
                 self?.performSegue(withIdentifier: "showMain", sender: nil)
